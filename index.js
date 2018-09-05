@@ -1,10 +1,4 @@
-const express = require('express')
-const main = require('./main.js')
-const p2p = require('./p2p.js')
-const route = require('./testRoutes')
+const test = require('./testRoute');
+const http = require('http');
 
-const app = express()
-
-app.get('/', (req, res) => res.send('Hello World!'))
-
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+http.createServer(test.handleRequest).listen(3000);
